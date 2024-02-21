@@ -28,6 +28,8 @@ class Employee:
                 print("Update Employee Details:")
                 for key in employee.keys():
                     if key != "empno":
+                        if key == "salary":
+                            continue
                         new_value = input("Enter new {} (Press Enter to keep the same): ".format(key))
                         if new_value:
                             employee[key] = new_value
