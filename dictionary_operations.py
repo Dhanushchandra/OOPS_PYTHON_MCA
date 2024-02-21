@@ -4,7 +4,6 @@ class Employee:
 
     def add_employee(self):
 
-        employee = dict()
         n = int(input("Enter no of employee: "))
 
         for i in range(1, n + 1):
