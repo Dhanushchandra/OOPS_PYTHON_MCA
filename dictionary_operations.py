@@ -40,6 +40,7 @@ class Employee:
         if not found:
             print("Employee with ID {} not found.".format(id))
 
+
     def clear_employee(self):
         id = input("Enter employee ID: ")
         found = False
@@ -52,6 +53,7 @@ class Employee:
             print("Not Found")
         print("Employee with the ID " + id + " Deleted")
 
+
     def cal_salary(self, employee):
         basic = employee["basic"]
         hra = employee["hra"]
@@ -61,9 +63,11 @@ class Employee:
         salary = int(basic) + int(hra) + int(da) - int(deduct) - int(tds)
         return salary
 
+
     def display_employees(self):
         for employee in self.employees:
             print(employee)
+
 
     def display_an_employee(self):
         id = input("Enter employee ID: ")
