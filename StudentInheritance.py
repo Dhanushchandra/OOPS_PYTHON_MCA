@@ -12,7 +12,6 @@ class Student:
 
 class PgStudent(Student):
     def __init__(self):
-        super().__init__()
         self.stip = ""
         self.sem = ""
         self.fees = ""
@@ -38,7 +37,6 @@ class PgStudent(Student):
 
 class UgStudent(Student):
     def __init__(self):
-        super().__init__()
         self.stip = ""
         self.sem = ""
         self.fees = ""
@@ -62,44 +60,49 @@ class UgStudent(Student):
         print("FEES: " + self.fees)
 
 
-p1 = PgStudent()
-u1 = UgStudent()
 
-while True:
-    print("1: Under Graduation \n2: Post Graduation \n3: Exit")
 
-    op = int(input("Enter the option: "))
+def manage_students():
+    pgstudents = []
+    ugstudents = []
 
-    if op == 1:
-        while True:
-            print("1: Enter Data \n2: Display Data \n3: Exit")
-            ch = int(input("Enter the option: "))
 
-            if ch == 1:
-                u1.getdata()
-            elif ch == 2:
-                u1.display()
-            elif ch == 3:
-                break
-            else:
-                print("Invalid Input")
+def manage_students():
+    pg_students = []
+    ug_students = []
 
-    elif op == 2:
-        while True:
-            print("1: Enter Data \n2: Display Data \n3: Exit")
-            ch = int(input("Enter the option: "))
+    while True:
+        print("1: Under Graduation \n2: Post Graduation \n3: Display All Students \n4: Exit")
+        option = input("Enter the option: ")
 
-            if ch == 1:
-                p1.getdata()
-            elif ch == 2:
-                p1.display()
-            elif ch == 3:
-                break
-            else:
-                print("Invalid Input")
+        if option == '1':
+            num = int(input("Enter the no of students: "))
+            for i in range(0, num ):
+                ug_student = UgStudent()
+                ug_student.getdata()
+                ug_students.append(ug_student)
 
-    elif op == 3:
-        break
+        elif option == '2':
+            num = int(input("Enter the no of students: "))
+            for i in range(0, num):
+                pg_student = PgStudent()
+                pg_student.getdata()
+                pg_students.append(pg_student)
 
-    else:
-        print("Invalid Input")
+        elif option == '3':
+            print("\n===== Post Graduation Students =====")
+            for pg_student in pg_students:
+                pg_student.display()
+                print()
+            print("\n===== Under Graduation Students =====")
+            for ug_student in ug_students:
+                ug_student.display()
+                print()
+
+        elif option == '4':
+            break
+
+        else:
+            print("Invalid Input")
+
+manage_students()
