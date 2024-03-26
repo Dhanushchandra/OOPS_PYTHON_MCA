@@ -13,7 +13,7 @@ ov2.get_elements(int(input("Enter the size of the second list: ")))
 ov2.display()
 
 # Display results
-ov1._add_(ov2)
+sum = ov1 + ov2
 ov1._sub_(ov2)
 ov1._mul_(ov2)
 ov1._floordiv_(ov2)

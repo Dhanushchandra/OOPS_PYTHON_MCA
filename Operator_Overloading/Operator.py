@@ -1,5 +1,5 @@
 class Operator:
-    def _init_(self):
+    def __init__(self):
         self.list = []
 
     def get_elements(self, size):
@@ -8,22 +8,32 @@ class Operator:
     def display(self):
         print("List:", self.list)
 
-    def _add_(self, other):
+    def __add__(self, other):
         new_list = [a + b for a, b in zip(self.list, other.list)]
-        print("Sum:", new_list)
+        result = Operator()
+        result.list = new_list
+        return result
 
-    def _sub_(self, other):
+    def __sub__(self, other):
         new_list = [a - b for a, b in zip(self.list, other.list)]
-        print("Difference:", new_list)
+        result = Operator()
+        result.list = new_list
+        return result
 
-    def _mul_(self, other):
+    def __mul__(self, other):
         new_list = [a * b for a, b in zip(self.list, other.list)]
-        print("Product:", new_list)
+        result = Operator()
+        result.list = new_list
+        return result
 
-    def _floordiv_(self, other):
+    def __floordiv__(self, other):
         new_list = [a // b for a, b in zip(self.list, other.list)]
-        print("Integer Quotient:", new_list)
+        result = Operator()
+        result.list = new_list
+        return result
 
-    def _pow_(self, other):
+    def __pow__(self, other):
         new_list = [a ** b for a, b in zip(self.list, other.list)]
-        print("Power:", new_list)
+        result = Operator()
+        result.list = new_list
+        return result
